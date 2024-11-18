@@ -1,0 +1,526 @@
+/* HOME */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+.mySlide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: #B49852;
+}
+
+.slider-heading {
+    color: white;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adding shadow to the text */
+    font-family: "Kaisei Tokumin";
+    font-size: 55px;
+    animation: slideInAndFade .5s forwards;
+}
+
+.slider-content {
+    color: white;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adding shadow to the text */
+    font-family: "Roboto";
+    font-weight: normal;
+    font-size: 20px;
+    animation: slideInAndFade 1s forwards;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 80%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: #b49852;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    animation: fade 1s forwards;
+}
+
+.dot {
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #e3d2a8;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #B49852;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes slideInAndFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Move up by 20 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move back to its original position */
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+
+/* Content CSS */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 60px 0 60px;
+    flex-direction: column;
+    background-color: white;
+}
+
+h1.title, p.description {
+    font-family: 'Kaisei Tokumin', serif;
+    margin: 0;
+    color: black;
+}
+
+h3.title {
+    margin: 0;
+}
+
+.btn-join, a.join{
+    text-decoration: none;
+    color: white;
+    background-color: #B49852;
+    border: none;
+    padding: 10px;
+    width: 10%;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+a.btn-sign-in {
+    color: black;
+    font-size: 18px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px 0 0 0;
+}
+
+/* Card Slider CSS*/
+
+/* Centered Container Styles */
+.card-container {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 0 40px 0; /* Add padding as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+.card__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card__article {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.card__article:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.card__article:hover .card__image {
+    opacity: .5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card__image {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    padding: 0; /* Remove left padding */
+    border-radius: 5px 5px 0 0;
+}
+
+.card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0; /* Remove margin */
+    border-radius: 5px 5px 0 0;
+}
+
+.card__data {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 100%; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+}
+
+.card__name {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    margin-bottom: 0.5rem; /* Adjust margin as needed */
+}
+
+.card__description {
+    font-size: 15px; /* Adjust font size as needed */
+}
+
+.card__button {
+    color: #B49852;
+    font-size: 20px;
+    border: 2px solid #B49852;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.card__button:hover {
+    background-color: #B49852;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.arrow-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Align items to the right */
+}
+
+
+p.instruction {
+    text-align: right;
+    color: white;
+    margin-top: 30px;
+}
+
+.description-container {
+    height: 70%;
+    padding: 5px 5px 0 5px;
+}
+
+.btn-container {
+    height: 30%;
+}
+
+.title-container {
+    height: 50%;
+    padding: 1px;
+}
+
+.detail-container {
+    height: 50%;
+}
+
+/* Map CSS*/
+.google-map {
+    position: relative;
+    height: 400px;
+    width: 80%;
+    margin: 50px;
+}
+
+.google-map iframe {
+    width: 100%;
+    height: 100%; /* Set iframe height to fill the container */
+}
+
+/* BOOKING */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.row-container {
+    padding: 5px 10%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.room-info-container {
+    width: 30%;
+    background-color: white;
+}
+
+.table-container {
+    width: 70%;
+    background-color: white;
+}
+
+.bed-image {
+    width: 95%;
+    height: auto;
+    margin: 0;
+}
+
+h4.title {
+    margin: 20px 0;
+}
+
+table {
+    width:95%;
+    margin: 20px 0 20px 5%;
+    text-align: left;
+}
+
+td {
+    padding: 10px 0 30px;
+}
+
+.btn-book, a.book {
+    text-decoration: none;
+    color: white;
+    background-color: #B49852;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-join:hover, .btn-join:hover a.join {
+    background-color: #bfa86f;
+}
+
+@media screen and (max-width: 768px) {
+    .row-container {
+        flex-direction: column;
+    }
+
+    .room-info-container,
+    .table-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    table {
+        margin: 0;
+        width: 100%;
+    }
+
+    .bed-image {
+        width: 100%;
+    }
+}
+
+/* LOGIN */
+.body-container {
+    background-size: cover;
+    min-height: calc(100vh - 100px); /* Adjust height for header */
+    display: flex;
+    justify-content: center; /* Center contents horizontally */
+    align-items: center; /* Center contents vertically */
+    overflow: auto; /* Make container scrollable */
+}
+
+.container-login {
+    width: 20%; /* Set width to 90% of the viewport */
+    padding: 30px 30px 70px 30px;
+    margin: 50px auto; /* Added margin to center the container and provide spacing */
+    background-color: rgba(255, 255, 255, 0.582);;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease forwards; /* Apply the fade-in animation */
+    opacity: 0; /* Initially hide the container */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 */
+    }
+}
+
+.form-control {
+    border-color: transparent;
+    border: none; 
+    outline: none; 
+    border-bottom: 1px solid #000000;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 0;
+    margin-bottom: 50px;
+}
+
+/* remove background color when I autocomplete the form */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn-color {
+    display: block;
+    width: 70%;
+    background-color: #B49852;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin: auto; /* Center horizontally */
+}
+
+/* REGISTRATION */
+
+.container-reg {
+    width: 50%; /* Set width to 90% of the viewport */
+    padding: 30px 40px 70px 40px;
+    margin: 50px auto; /* Added margin to center the container and provide spacing */
+    background-color: rgba(255, 255, 255, 0.582);
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease forwards; /* Apply the fade-in animation */
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+from {
+    opacity: 0; /* Start with opacity 0 */
+}
+to {
+    opacity: 1; /* End with opacity 1 */
+}
+}
+
+.input-row {
+    display: flex;
+}
+
+.input-row input:first-child {
+    margin-right: 30px; /* Add margin to the right of the first input */
+}
+
+.input-row input:nth-child(2) {
+    margin-left: 30px; /* Add margin to the left of the second input */
+}
+
+.input-row input {
+    margin-right: 10px; /* Add some space between inputs */
+}
+
+/* remove background color when I autocomplete the form */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn {
+    display: block;
+    width: 30%;
+    background-color: #B49852;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin: auto; /* Center horizontally */
+}

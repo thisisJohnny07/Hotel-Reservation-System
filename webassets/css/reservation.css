@@ -1,0 +1,98 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 5%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: black;
+  }
+  
+  tr:hover {
+    background-color: #fae7b5a1;
+  }
+
+  td img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire cell */
+}
+
+/* Update Password */
+  
+  /* Add padding to containers */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background-color: white;
+    max-width: 500px; /* Adjust the maximum width */
+    width: 100%; /* Ensure the form container takes up the full width */
+}
+
+  
+  /* Full-width input fields */
+ input[type=password], input[type=text], input[type=email], input[type=number] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+  }
+  
+ input[type=password]:focus, input[type=text]:focus, input[type=email]:focus, input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #B49852;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+
+  .form-container label {
+    font-family: "Roboto";
+    font-size: 15px;
+    align-self: flex-start; /* Align labels to the start (left) */
+}
+
